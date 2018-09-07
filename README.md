@@ -30,7 +30,10 @@ For any questions or support details, please email:
 ## Spec
 
 * Display list of kegs.
-* Recreate styling of Tap Room
+* Recreate styling of Tap Room   
+
+**Component Structure:**
+![Alt text](src/assets/images/tap_room_structure.png)
 
 ## MIT License
 
