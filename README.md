@@ -1,7 +1,7 @@
 # Tap Room
 ##### An App for a Tap Room
 
-## Created 09/06/2018
+## Created 09/07/2018
 
 ## Made By
 
@@ -26,7 +26,9 @@ A site that manages drinks for a tap room.
 For any questions or support details, please email:
   * amellocello@msn.com  
 
-
+## Notes
+  During the rebuild process I noticed a few things that could be a problem once I add functionality.  I'm not sure my current routing is ideal for editing elements or for dynamically changing the colors/styling.  I'm also unsure how I will be able to add functions such as subtracting pints that were bought.
+  
 ## Spec
 
 * Display list of kegs.
