@@ -9,7 +9,9 @@
 
 ## Description
 
-A site that manages drinks for a tap room.
+A site that manages drinks for a tap room.  
+
+In terms of setting up and conceptually structuring projects, I feel like Angular and REACT are very similar.  Being a framework, Angular has set locations for backend functionality whereas REACT does not.  I am unsure how backend functionality will work in REACT nor do I think it will be very similar to Angular.  I think the styling is a bit more cluttered in REACT since there is no separate css file.  The passing of data in Angular I found to be quite cumbersome and hope that it is easier in REACT.
 
 ## Setup
 
@@ -28,7 +30,7 @@ For any questions or support details, please email:
 
 ## Notes
   During the rebuild process I noticed a few things that could be a problem once I add functionality.  I'm not sure my current routing is ideal for editing elements or for dynamically changing the colors/styling.  I'm also unsure how I will be able to add functions such as subtracting pints that were bought.
-  
+
 ## Spec
 
 * Display list of kegs.
