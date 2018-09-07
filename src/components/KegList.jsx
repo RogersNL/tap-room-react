@@ -1,6 +1,7 @@
 import React from 'react';
+import Filter from './Filter';
 
-const masterKegList = {
+const masterKegList =
   [
     {
       name: 'Spicy Orange Dream',
@@ -31,17 +32,32 @@ const masterKegList = {
       pintsLeft: 24
     },
     {
-      name: 'Graveyard Sunshine',
-      brand: 'Doors Lite',
-      price: 4,
+      name: 'Organic Seaweed',
+      brand: 'Green Moon',
+      price: 3,
       alcoholContent: 2,
-      pintsLeft: 24
+      pintsLeft: 46
     },
-
+    {
+      name: 'Crazy Frog',
+      brand: 'Sudweiser',
+      price: 1,
+      alcoholContent: 2,
+      pintsLeft: 50
+    }
   ]
-}
+
 function KegList(){
   return(
+    <div>
+      <h3>Kegs</h3>
+      <Filter/>
+      <style jsx>{`
+        h3 {
+          text-align: center;
+        }
+      `}</style>
+    </div>
   );
 }
 
