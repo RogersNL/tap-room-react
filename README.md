@@ -30,9 +30,7 @@ For any questions or support details, please email:
 ## Spec
 
 * Display list of kegs.
-* Use form to create new kegs.
-* Add
-* Add images and styling for site.
+* Recreate styling of Tap Room
 
 ## MIT License
 
