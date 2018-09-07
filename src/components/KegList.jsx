@@ -1,5 +1,6 @@
 import React from 'react';
 import Filter from './Filter';
+import Keg from './Keg';
 
 const masterKegList =
   [
@@ -12,7 +13,7 @@ const masterKegList =
     },
     {
       name: 'Caramel Banana Surprise',
-      brand: 'Willer Light',
+      brand: 'Willer Lite',
       price: 5,
       alcoholContent: 2,
       pintsLeft: 23
@@ -52,8 +53,29 @@ function KegList(){
     <div>
       <h3>Kegs</h3>
       <Filter/>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Price</th>
+            <th>Alcohol Content (%)</th>
+            <th>Pints Left</th>
+          </tr>
+          {masterKegList.map((keg, index) =>
+            <Keg name={keg.name}
+              brand={keg.brand}
+              price={keg.price}
+              alcoholContent={keg.alcoholContent}
+              pintsLeft={keg.pintsLeft}
+              key={index}/>
+            )}
+        </table>
       <style jsx>{`
         h3 {
+          text-align: center;
+        }
+        td, th{
+          width: 150px;
           text-align: center;
         }
       `}</style>
