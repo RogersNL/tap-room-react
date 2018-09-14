@@ -36,6 +36,7 @@ For any questions or support details, please email:
 * Display list of kegs.
 * Recreate styling of Tap Room
 * Add functionality to create kegs and see details
+* Create ability to sell pints
 
 **Component Structure:**
 ![Alt text](src/assets/images/tap_room_structure.png)

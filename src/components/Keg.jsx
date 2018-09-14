@@ -2,11 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Keg(props){
+  let rowClass = 'bg-success';
   function handlePassingIdForSellPint(){
     props.onSellingPints(props.id);
+    rowClass = props.onChangingWarningBG(props.pintsLeft);
+    console.log(rowClass);
   }
   return(
-    <tr className="bg-success">
+    <tr className={rowClass}>
       <td>{props.name}</td>
       <td>{props.brand}</td>
       <td>{props.price}</td>
@@ -30,7 +33,8 @@ Keg.propTypes = {
   price: PropTypes.number.isRequired,
   alcoholContent: PropTypes.number.isRequired,
   pintsLeft: PropTypes.number.isRequired,
-  onSellingPints: PropTypes.func
+  onSellingPints: PropTypes.func,
+  onChangingWarningBG: PropTypes.func
 };
 
 export default Keg;

@@ -62,7 +62,8 @@ class App extends React.Component {
           pintsLeft: 50,
           id: v4()
         }
-      ]
+      ],
+
     };
     this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
     this.handleSellingPints = this.handleSellingPints.bind(this);
@@ -78,11 +79,20 @@ class App extends React.Component {
     for(let i = 0; i < newMasterKegList.length; i++){
       if(newMasterKegList[i].id === id){
         if(newMasterKegList[i].pintsLeft > 0){
-          newMasterKegList[i].pintsLeft--;          
+          newMasterKegList[i].pintsLeft--;
         }
       }
     }
     this.setState({masterKegList: newMasterKegList});
+  }
+  handleChangingWarningBG(pints){
+    if(pints < 10) {
+      return "bg-danger";
+    } else if(pints < 50) {
+      return "bg-warning";
+    } else {
+      return "bg-success";
+    }
   }
   render(){
     return(
@@ -91,7 +101,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/newkeg' render={()=><KegForm onNewKegCreation={this.handleAddingNewKegToList} />} />
-          <Route path='/kegs' render={()=><KegList kegList={this.state.masterKegList} onSellingPints={this.handleSellingPints} />} />
+          <Route path='/kegs' render={()=><KegList kegList={this.state.masterKegList} onSellingPints={this.handleSellingPints} onChangingWarningBG={this.handleChangingWarningBG} />} />
           <Route path='/editkeg' component={EditKeg} />
           <Route component={Error404} />
         </Switch>
