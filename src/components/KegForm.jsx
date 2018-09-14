@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function KegForm(){
   return(
     <div>
       <h3>Add a new Keg</h3>
-      <form>
+      <form onSubmit={}>
         <label>Keg Name</label>
         <input className="form-control"/>
         <label>Keg Brand</label>
@@ -20,6 +21,8 @@ function KegForm(){
     </div>
   );
 }
+this.propTypes = {
 
+}
 
 export default KegForm;
