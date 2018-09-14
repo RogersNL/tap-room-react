@@ -5,6 +5,7 @@ import KegForm from './KegForm';
 import KegList from './KegList';
 import EditKeg from './EditKeg';
 import Home from './Home';
+import Error404 from './Error404';
 
 function App(){
   return(
@@ -15,6 +16,7 @@ function App(){
         <Route path='/newkeg' component={KegForm} />
         <Route path='/kegs' component={KegList} />
         <Route path='/editkeg' component={EditKeg} />
+        <Route component={Error404} />
       </Switch>
     </div>
 
