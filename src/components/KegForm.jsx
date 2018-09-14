@@ -52,7 +52,7 @@ function KegForm(props){
           id='pintsLeft'
           placeholder='Pints Left'
           ref={(input) => {_pintsLeft = input;}}/>
-        <button className="btn btn-primary">Add</button>
+        <button type='submit' className="btn btn-primary">Add</button>
       </form>
     </div>
   );
