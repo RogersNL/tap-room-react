@@ -30,7 +30,10 @@ For any questions or support details, please email:
 
 ## Notes
   During the rebuild process I noticed a few things that could be a problem once I add functionality.  I'm not sure my current routing is ideal for editing elements or for dynamically changing the colors/styling.  I'm also unsure how I will be able to add functions such as subtracting pints that were bought.
-
+## Known Bugs
+  * Update not functional.  The edit button will isolate the keg but the keg will not populate the edit form.  Error message suggests a need for use of something called 'onChange'.
+  * Backgrounds do not dynamically display.  Attempted to do it without making the Keg class stateful while also not having to add a separate space in memory for 'background color' in the App state.
+  * Multiple table syntax errors.
 ## Spec
 
 * Display list of kegs.
@@ -39,7 +42,7 @@ For any questions or support details, please email:
 * Create ability to sell pints
 
 **Component Structure:**
-![Alt text](src/assets/images/tap_room_structure.png)
+![Alt text](src/assets/images/new_tap_room_structure.png)
 
 ## MIT License
 

@@ -63,10 +63,12 @@ class App extends React.Component {
           id: v4()
         }
       ],
-
+      selectedKeg: null
     };
     this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
     this.handleSellingPints = this.handleSellingPints.bind(this);
+    this.handleUpdatingKegs = this.handleUpdatingKegs.bind(this);
+    this.handleGettingSelectedKegForEdit = this.handleGettingSelectedKegForEdit.bind(this);
   }
   handleAddingNewKegToList(newKeg){
     let newMasterKegList = this.state.masterKegList.slice();
@@ -94,6 +96,29 @@ class App extends React.Component {
       return "bg-success";
     }
   }
+  handleUpdatingKegs(updatedKeg){
+    let newMasterKegList = this.state.masterKegList.slice();
+    for(let i = 0; i < newMasterKegList.length; i++){
+      if(newMasterKegList[i].id === updatedKeg.id){
+        newMasterKegList.splice(i,1,updateKeg);
+      }
+    }
+    this.setState({masterKegList: newMasterKegList});
+  }
+  // handlePassingSelectedKegToEditForm(id){
+  //
+  // }
+  handleGettingSelectedKegForEdit(id){
+    let newMasterKegList = this.state.masterKegList.slice();
+    let newSelectedKeg = this.state.selectedKeg;
+    console.log(this.state.selectedKeg);
+    for(let i = 0; i < newMasterKegList.length; i++){
+      if(newMasterKegList[i].id === id){
+        newSelectedKeg = newMasterKegList[i];
+      }
+    }
+    this.setState({selectedKeg: newSelectedKeg});
+  }
   render(){
     return(
       <div className="container">
@@ -101,8 +126,9 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/newkeg' render={()=><KegForm onNewKegCreation={this.handleAddingNewKegToList} />} />
-          <Route path='/kegs' render={()=><KegList kegList={this.state.masterKegList} onSellingPints={this.handleSellingPints} onChangingWarningBG={this.handleChangingWarningBG} />} />
-          <Route path='/editkeg' component={EditKeg} />
+          <Route path='/kegs' render={()=><KegList kegList={this.state.masterKegList} onSellingPints={this.handleSellingPints} onChangingWarningBG={this.handleChangingWarningBG}
+          onGettingSelectedKegForEdit={this.handleGettingSelectedKegForEdit} />} />
+        <Route path='/editkeg' render={()=><EditKeg selectedKeg={this.state.selectedKeg} onUpdatingKegs={this.handleUpdatingKegs} />} />
           <Route component={Error404} />
         </Switch>
       </div>
