@@ -65,11 +65,23 @@ class App extends React.Component {
       ]
     };
     this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
+    this.handleSellingPints = this.handleSellingPints.bind(this);
   }
   handleAddingNewKegToList(newKeg){
     let newMasterKegList = this.state.masterKegList.slice();
     newMasterKegList.push(newKeg);
     console.log(newMasterKegList);
+    this.setState({masterKegList: newMasterKegList});
+  }
+  handleSellingPints(id){
+    let newMasterKegList = this.state.masterKegList.slice();
+    for(let i = 0; i < newMasterKegList.length; i++){
+      if(newMasterKegList[i].id === id){
+        if(newMasterKegList[i].pintsLeft > 0){
+          newMasterKegList[i].pintsLeft--;          
+        }
+      }
+    }
     this.setState({masterKegList: newMasterKegList});
   }
   render(){
@@ -79,7 +91,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/newkeg' render={()=><KegForm onNewKegCreation={this.handleAddingNewKegToList} />} />
-          <Route path='/kegs' render={()=><KegList kegList={this.state.masterKegList} />} />
+          <Route path='/kegs' render={()=><KegList kegList={this.state.masterKegList} onSellingPints={this.handleSellingPints} />} />
           <Route path='/editkeg' component={EditKeg} />
           <Route component={Error404} />
         </Switch>
